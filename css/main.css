@@ -1,16 +1,19 @@
 *{
     margin: 0;
     padding: 0;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
-html{
+html,
+body{
     background-color: #fff;
     color: #555;
     font-family: 'Lato', 'Arial', sans-serif;
     font-weight: 300;
     font-size: 20px;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
 }
 .clearfix{zoom: 1}
 .clearfix:after{
@@ -114,6 +117,7 @@ a:visited{
     text-decoration: none;
     border-bottom: 1px solid #e67e22;
     padding-bottom: 2px;
+    -webkit-transition: border-bottom 0.2s, color 0.2s;
     transition: border-bottom 0.2s, color 0.2s;
 }
 a:hover,
@@ -131,6 +135,7 @@ input[type=submit]{
     font-weight: 300;
     text-decoration: none;
     border-radius: 200px;
+    -webkit-transition: background-color 0.3s, border 0.3s, color 0.3s;
     transition: background-color 0.3s, border 0.3s, color 0.3s;
 }
 
@@ -171,6 +176,7 @@ input[type=sumit]:active{
     color: #fff;
 }
 header{
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(img/hero.jpg);
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/hero.jpg);
     background-size: cover;
     background-position: center;
@@ -183,6 +189,7 @@ header{
     width: 1140px;
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 
@@ -192,7 +199,14 @@ header{
     float: left;
     margin-top: 20px;
 }
-
+.logo-black{
+    display: none;
+    height: 50px;
+    width: auto;
+    float: left;
+    margin: 5px 0;
+}
+/* MAIN NAV*/
 .main-nav{
     float: right;
     list-style: none;
@@ -212,6 +226,7 @@ header{
     text-transform: uppercase;   
     font-size: 90%;
     border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.3s;
     transition: border-bottom 0.3s;
 }
 
@@ -219,6 +234,37 @@ header{
 .main-nav li a:active{
     border-bottom: 2px solid #e67e22;
 }
+
+.mobile-nav-icon{
+    float: right;
+    margin-top: 30px;
+    cursor: pointer;
+    display: none;
+}
+.mobile-nav-icon i{
+    font-size: 200%;
+    color: #fff;
+}
+
+/*STICKY NAV*/
+.sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 2px #efecec;
+    z-index: 9999;
+}
+.sticky .main-nav{margin-top: 18px; }
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited{
+    padding: 17px 0;
+    color: #555;
+   
+}
+.sticky .logo{display: none;}
+.sticky .logo-black{display: block;}
 /*-----FEATURES-----*/
 .section-features .long-copy{
     
@@ -248,11 +294,16 @@ header{
     opacity: 0.7;
     width: 100%;
     height: auto;
+    -webkit-transform: scale(1.15);
     transform: scale(1.15);
+    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+    transition: opacity 0.3s, -webkit-transform 0.3s;
     transition: transform 0.3s, opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
 }
 .meal-photo img:hover{
     opacity: 1;
+    -webkit-transform: scale(1.03);
     transform: scale(1.03);
 }
 /*---------CITIES-------*/
@@ -318,6 +369,7 @@ header{
 /* TESTIMONIES*/
 /*------------------------*/
 .section-testimonials{
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))) ,url(img/back-customers.jpg);
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)) ,url(img/back-customers.jpg);
     background-size: cover;
     color: #fff;
@@ -362,6 +414,7 @@ cite img{
     border-radius: 5px;
     width: 90%;
     margin-left: 5%;
+    -webkit-box-shadow: 0 2px 2px #f5f2f2;
     box-shadow: 0 2px 2px #f5f2f2
 }
 .plan-box div{
@@ -453,6 +506,7 @@ footer{
     text-decoration: none;
     border: 0;
     color: #7e7e7e;
+    -webkit-transition: color 0.3s;
     transition: color 0.3s;
 }
 
@@ -464,6 +518,7 @@ footer{
 .ion-social-twitter,
 .ion-social-googleplus,
 .ion-social-instagram{
+    -webkit-transition: color 0.2s;
     transition: color 0.2s;
 }
 
@@ -489,3 +544,23 @@ footer p{
     color: #517fa4;
 }
 
+
+/* Animated scroll*/
+.js--wp-1,
+.js--wp-2,
+.js--wp-3{
+
+    opacity: 0;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+.js--wp-4{-webkit-animation-duration: 1s;animation-duration: 1s;}
+.js--wp-1.animated
+.js--wp-2.animated,
+.js--wp-3.animated{
+    opacity: 1;
+}
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                            
