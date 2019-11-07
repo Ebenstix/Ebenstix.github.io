@@ -1,23 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial scale=1.0">
+        <meta name="description" content="Omnifood is a premium food delievery service with the mission to provide healthy  foods to customers.">
         <link rel="stylesheet" type="text/css" href="css/normalize.css">
         <link rel="stylesheet" type="text/css" href="css/grid.css">
         <link rel="stylesheet" type="text/css" href="css/ionicons.min.css">
         <link rel="stylesheet" type="text/css" href="css/animate.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/queries.css">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial scale=1.0">
-        <meta name="description" content="Omnifood is a premium food delievery service with the mission to provide healthy  foods to customers.">
-        
-        <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
-        <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
-        <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
-        <link rel="stylesheet" type="text/css" href="vendors/css/animate.css">
-        <link rel="stylesheet" type="text/css" href="resources/css/style.css">
-        <link rel="stylesheet" type="text/css" href="resources/css/queries.css">
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap" rel="stylesheet" type="text/css">
         <title>Omnifood</title>
         
@@ -110,7 +102,7 @@
                 </li>
                  <li>
                     <figure class="meal-photo">
-                        <img src=" img/3.jpg" alt="Chicken breast steak with vegetables">
+                        <img src="img/3.jpg" alt="Chicken breast steak with vegetables">
                     </figure>
                 </li>
                  <li>
@@ -334,13 +326,28 @@
                 </div>
             </div>
         </section>
-        <section class="section-form">
+        <section class="section-form" id="form">
             <div class="row">
                <h2>We're happy to hear from you</h2>
             </div>
             <div class="row">
-                <form method="post" action="#" class="contact-form">
+                <form method="post" action="mail.php" class="contact-form">
                     <div class="row">
+                        <?php
+                        if($_GET["success"] == 1){
+                            echo"<div class=\"form-messages success\">Thank you! your message has been sent.</div>"
+                        }
+                        if($_GET["error"] == -1){
+                            echo"<div class="form-messages error">Sorry! Something went wrong</div>"
+                        }
+
+                        ?>
+                    </div>
+                    <div class="row">
+                        
+                        
+                        
+                        
                         <div class="col span-1-of-3">
                             <label for="name">Name</label>
                         </div>
@@ -426,8 +433,8 @@
     <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/selectivizr@1.0.3/selectivizr.min.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+    <script src="vendors/js/jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src="resources/js/script.js"></script>
     </body>
    
 
